@@ -18,7 +18,10 @@ function page () {
   shadow.innerHTML = `
     <div class='main'>
       <img src='./assets/Wizard-Amigos---Stickers---FOUR-FACES---TRANSPARENT---2022.png'></img>
-      <h1>Wizard Amigos Code Camp</h1>
+      <h1>
+        <span>Wizard Amigos</span>
+        <span> Code Camp</span>
+      </h1>
       <div class='date'>Sept 26 - Oct 10 2022, Wales (UK)</div>
       <div class='box'>
       <p>Wizard Amigos code camp is a 2 week DIY event from September 26 to October 10.</p>
@@ -140,9 +143,10 @@ function get_theme () {
     }
     h1 {
       font-family: 'Magic School One', sans-serif;
+      display: block;
       line-height: 0.8;
       text-align: center;
-      font-size: 4em;
+      font-size: 4rem;
       font-weight: 100;
       color: hsla(291, 100%, 81%, 1);
       grid-column-start: 2;
@@ -177,7 +181,7 @@ function get_theme () {
      cursor: pointer;
     }
     button {
-      font-size: 1.1rem;
+      font-size: 1rem;
       border: none;
       padding: 1em;
       background-color: hsla(291, 100%, 81%, 1);
