@@ -1,5 +1,5 @@
-const sheet = new CSSStyleSheet()
-sheet.replaceSync(get_theme())
+// const sheet = new CSSStyleSheet()
+// sheet.replaceSync(get_theme())
 
 module.exports = page
 
@@ -109,7 +109,10 @@ function page () {
   shadow.querySelector('map_button').replaceWith(map_button)
   shadow.querySelector('booking_button').replaceWith(booking_button)
   
-  shadow.adoptedStyleSheets = [sheet]
+  // shadow.adoptedStyleSheets = [sheet]
+  const style = document.createElement('style')
+  style.textContent = get_theme()
+  shadow.append(style)
   return el
 
   // handlers
