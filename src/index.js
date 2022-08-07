@@ -295,5 +295,13 @@ function get_theme () {
       grid-row-start: 15;
       grid-row-end: 17;
     }
+    @media only screen and (max-width: 768px) {
+      .main {
+        display: grid;
+        justify-items: center;
+        line-height: 2rem;
+        grid-template-columns: 1fr 8fr 1fr;
+      }
+    }
   `
 }

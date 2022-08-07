@@ -25,7 +25,6 @@ style.textContent = `
   }
   body {
     background-color: hsla(245, 55%, 50%, 1);
-    padding: 5%;
     font-size: 1.3em;
   }
 `
