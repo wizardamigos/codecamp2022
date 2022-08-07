@@ -42,7 +42,7 @@ function page () {
   shadow.innerHTML = `
     <div class='main'>
       <img src='./assets/Wizard-Amigos---Stickers---FOUR-FACES---TRANSPARENT---2022.png'></img>
-      <h1>Hello Wizard Code Camp</h1>
+      <h1>Wizard Amigos Code Camp</h1>
       <h2>Sept 26 - Oct 10, Wales (UK)</h2>
       <h3 class='box'>
         <p>Wizard Amigos code camp is a 2 week DIY event from September 26 to October 10.</p>
@@ -79,7 +79,10 @@ function page () {
         <p>
           Accommodation will be provided by the Astralship, a hackerspace that promotes 
           creativity, collaboration and innovation located in 
-          Deiniolen, Wales.
+          Deiniolen, Wales. You can get there by taking a 
+          <a target='_blank' href='https://www.thetrainline.com/book/results?origin=2144c4ddc11461cf9b03af198933e8df&destination=da5bb7333af0b34c0c39e59b5a53b139&outwardDate=2022-09-26T09%3A45%3A00&outwardDateType=departAfter&journeySearchType=single&passengers%5B%5D=1992-08-07&directSearch=false&selectedOutward=SAhkJK5SWK8%3D%3AyRnNMstN3X8%3D'>direct train</a> 
+          to Bangor (approx. 3h from London) 
+          and then a taxi to Deniolen (approx. £20).
         </p>      
         <map_button></map_button>
         <p class='astralship'>
@@ -100,6 +103,30 @@ function page () {
           <img src='./assets/astral4.jpg'></img>
         </div>     
       </div>
+      <div class='faq box'>
+        <h2>FAQ</h2>
+        <h3>Who is organizing this?</h3>
+        <p>
+          This event is being organised by enthusiasts, for enthusiasts. 
+          Namely <a href='https://twitter.com/ninabreznik' target="_blank">ninabreznik</a> 
+          and <a href='https://twitter.com/serapath' target="_blank">serapath</a> who are active within the P2P community.
+          Anybody who would like to help should shoot us a message in <a href='https://discord.gg/8FzZPHkp44' target="_blank">WizardAmigos Discord</a>. 
+        </p>
+        <h3>Is event sponsored?</h3>
+        <p>
+          No. We have not yet asked for, nor recieved any interest in sponsorship. 
+          If you would like to sponsor the camp, please email us at <a href="mailto:we@wizardamigos.com"  target="_blank">we[at]wizardamigos.com</a>
+        </p>
+        <h3>Is there a discount for staying longer?</h3>
+        <p>
+          Yes. There is a 10% discount offered if you choose to stay for both weeks of the event.
+        </p>
+        <h3>Where can I get more information?</h3>
+        <p>
+          You can send questions to our <a href='https://twitter.com/wizardamigos' target="_blank">WizardAmigos Twitter</a> DMs or join the <a href='https://discord.gg/8FzZPHkp44' target="_blank">Discord</a>. 
+          </p>.
+        </p>
+      </div>
     </div>
   `
 
@@ -112,7 +139,7 @@ function page () {
   // handlers
 
   function book () {
-    window.open('')
+    window.open('https://forms.zohopublic.com/virtualoffice22084/form/WizardAmigosCodeCamp/formperma/W61690fN8Q0cci-bY3M-87kMmQ2kvKBjybp4ZNaX60Y')
   }
 
   function open_map () {
@@ -150,6 +177,16 @@ function get_theme () {
       justify-items: space-between;
       grid-column-start: 2;
     }
+    a {
+      color: hsla(163, 76%, 58%, 1);
+      transition: color .3s;
+    }
+    a:hover {
+     text-decoration: underline; 
+     color: hsla(121, 97%, 65%, 1);
+     transition: color .3s;
+     cursor: pointer;
+    }
     button {
       font-size: 1.1rem;
       border: 2px solid hsla(247, 89%, 70%, 1);
@@ -168,19 +205,18 @@ function get_theme () {
       cursor: pointer;
     }
     .box {
+      grid-column-start: 2;
       border: 16px solid hsla(121, 97%, 65%, 1);
       padding: 3%;
       margin-top: 5%;
+      display: grid;
+      justify-items: center;
     }
     .booking {
-      grid-column-start: 2;
-      display: grid;
-      justify-items: center;
     }
     .venue {
-      grid-column-start: 2;
-      display: grid;
-      justify-items: center;
+    }
+    .faq {
     }
     .astralship {
       font-style: italic;
