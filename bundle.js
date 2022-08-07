@@ -245,7 +245,7 @@ function get_theme () {
       border: 16px solid hsla(247, 89%, 70%, 1);
       transition: box-shadow .3s ease-in-out;
       padding: 3%;
-      margin-top: 5%;
+      margin: 5% 5% 0 5%;
       display: grid;
       justify-items: center;
       text-align: center;
@@ -339,7 +339,7 @@ function get_theme () {
         justify-items: center;
         line-height: 2rem;
         grid-template-columns: 1fr 8fr 1fr;
-      }
+      }em;
     }
   `
 }
