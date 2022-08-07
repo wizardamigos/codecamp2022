@@ -43,15 +43,15 @@ function page () {
     <div class='main'>
       <img src='./assets/Wizard-Amigos---Stickers---FOUR-FACES---TRANSPARENT---2022.png'></img>
       <h1>Wizard Amigos Code Camp</h1>
-      <h2>Sept 26 - Oct 10, Wales (UK)</h2>
-      <h3 class='box'>
-        <p>Wizard Amigos code camp is a 2 week DIY event from September 26 to October 10.</p>
+      <div class='date'>Sept 26 - Oct 10 2022, Wales (UK)</div>
+      <div class='box'>
+      <p>Wizard Amigos code camp is a 2 week DIY event from September 26 to October 10.</p>
         <p> 
           First week is reserved for informal talks and workshops and the second week for a 
           freestyle coworking, outdoor activities and just easy going hanging out with the like-minded people.
         </p>
         <p>Half a month of living, breathing and learning P2P and the future of the internet.</p>
-      </h3>
+      </div>
       <div class='booking box'>
         <h2> Booking </h2>
         <p>
@@ -104,7 +104,7 @@ function page () {
         </div>     
       </div>
       <div class='faq box'>
-        <h2>FAQ</h2>
+        <h2>About</h2>
         <h3>Who is organizing this?</h3>
         <p>
           This event is being organised by enthusiasts, for enthusiasts. 
@@ -160,10 +160,20 @@ function get_theme () {
       grid-column-start: 2;
     }
     h1 {
+      font-family: 'Magic School One', sans-serif;
+      line-height: 0.8;
+      text-align: center;
+      font-size: 4em;
+      font-weight: 100;
       color: hsla(291, 100%, 81%, 1);
       grid-column-start: 2;
     }
     h2 {
+      font-family: 'Magic School One', sans-serif;
+      text-align: center;
+      line-height: 1;
+      font-size: 3em;
+      font-weight: 100;
       color: hsla(121, 97%, 65%, 1);
       grid-column-start: 2;
     }
@@ -189,11 +199,11 @@ function get_theme () {
     }
     button {
       font-size: 1.1rem;
-      border: 2px solid hsla(247, 89%, 70%, 1);
-      padding: 1em;;
-      background-color: hsla(34, 87%, 70%, 1);
-      transition: background-color .3s, opacity .3s ease-in-out;
-      color: hsla(247, 89%, 70%, 1);
+      border: none;
+      padding: 1em;
+      background-color: hsla(291, 100%, 81%, 1);
+      transition: background-color .3s ease-in-out;
+      color: hsla(316, 56%, 32%, 1);
       grid-column-start: 2;
       margin: 3% 0 3% 0;
       width: 215px;
@@ -201,16 +211,26 @@ function get_theme () {
     }
     button:hover {
       background-color: hsla(121, 97%, 65%, 1);
-      transition: background-color .3s, opacity .3s ease-in-out;
+      transition: background-color .3s ease-in-out;
       cursor: pointer;
+    }
+    .date {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 2rem;
+      font-weight: 600;
+      color: hsla(121, 97%, 65%, 1);
+      grid-column-start: 2;
     }
     .box {
       grid-column-start: 2;
-      border: 16px solid hsla(121, 97%, 65%, 1);
+      border: 16px solid hsla(247, 89%, 70%, 1);
+      transition: box-shadow .3s ease-in-out;
       padding: 3%;
       margin-top: 5%;
       display: grid;
       justify-items: center;
+      text-align: center;
+      font-size:1.2rem;
     }
     .booking {
     }
