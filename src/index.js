@@ -195,6 +195,8 @@ function get_theme () {
     }
     .date {
       font-family: "Courier New", Courier, monospace;
+      justify-items: center;
+      text-align: center;
       font-size: 2rem;
       font-weight: 600;
       color: hsla(121, 97%, 65%, 1);
