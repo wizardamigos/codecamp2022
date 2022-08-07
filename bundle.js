@@ -26,7 +26,6 @@ style.textContent = `
   }
   body {
     background-color: hsla(245, 55%, 50%, 1);
-    padding: 5%;
     font-size: 1.3em;
   }
 `
@@ -329,6 +328,14 @@ function get_theme () {
       grid-column-end: 4;
       grid-row-start: 15;
       grid-row-end: 17;
+    }
+    @media only screen and (max-width: 768px) {
+      .main {
+        display: grid;
+        justify-items: center;
+        line-height: 2rem;
+        grid-template-columns: 1fr 8fr 1fr;
+      }
     }
   `
 }
