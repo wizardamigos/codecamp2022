@@ -241,7 +241,7 @@ function get_theme () {
       display: grid;
       justify-items: center;
       text-align: center;
-      font-size:1.2rem;
+      font-size:1.5rem;
     }
     .booking {
     }
