@@ -129,13 +129,14 @@ function get_theme () {
     button {
       font-size: 1.1rem;
       border: 2px solid hsla(247, 89%, 70%, 1);
-      padding: 3%;
+      padding: 1em;;
       background-color: hsla(34, 87%, 70%, 1);
       transition: background-color .3s, opacity .3s ease-in-out;
       color: hsla(247, 89%, 70%, 1);
       grid-column-start: 2;
       margin: 3% 0 3% 0;
-      width: 180px;
+      width: 215px;
+      height: 70px;
     }
     button:hover {
       background-color: hsla(121, 97%, 65%, 1);
