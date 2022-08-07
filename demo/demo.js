@@ -20,12 +20,12 @@ document.body.append(demo())
 
 const style = document.createElement('style')
 style.textContent = `
-  html {
+  html, body {
     height: 100%;
-  }
-  body {
     background-color: hsla(245, 55%, 50%, 1);
     font-size: 1.3em;
+    margin: 0;
+    padding: 0;
   }
 `
 
