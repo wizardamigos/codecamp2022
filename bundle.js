@@ -1,43 +1,42 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const page = require('..')
 
-function demo () {
-  const font = document.createElement('link')
-  font.setAttribute('href', 'https://fonts.cdnfonts.com/css/magic-school-one-2')
-  font.setAttribute('rel', 'stylesheet')
+function demo (cb) {
+  let font = new FontFace('Magic School One', 'url("https://fonts.cdnfonts.com/s/56374/MagicSchoolOne.woff")')
+  document.fonts.add(font)
+  font.load()
 
   const favicon = document.createElement('link')
   favicon.setAttribute('rel', 'icon')
   favicon.setAttribute('type', 'imagine/png')
   favicon.setAttribute('href', './assets/Wizard-Amigos---Stickers---WIZARD-BALL---TRANSPARENT---2022.png')
   
-  document.head.append(font, favicon)
-  const codecamp = page()
+  document.head.append(favicon)
+  const codecamp = page(cb)
   return codecamp
 }
+var count = 0
+const el = demo(async () => {
+  await document.fonts.ready
+  const style = document.createElement('style')
+  style.textContent = `
+    html, body {
+      height: 100%;
+      background-color: hsla(245, 55%, 50%, 1);
+      font-size: 1.3em;
+      margin: 0;
+      padding: 0;
+    }
+  `
+  document.body.append(style, el)
+})
 
-document.body.append(demo())
 
 
-const style = document.createElement('style')
-style.textContent = `
-  html, body {
-    height: 100%;
-    background-color: hsla(245, 55%, 50%, 1);
-    font-size: 1.3em;
-    margin: 0;
-    padding: 0;
-  }
-`
-
-document.body.append(style)
 },{"..":2}],2:[function(require,module,exports){
-// const sheet = new CSSStyleSheet()
-// sheet.replaceSync(get_theme())
-
 module.exports = page
 
-function page () {
+function page (cb) {
   const el = document.createElement('div')
   const shadow = el.attachShadow({ mode: 'closed' })
 
@@ -50,6 +49,15 @@ function page () {
   map_button.onclick = () => open_map()
   
   shadow.innerHTML = `
+    <link rel="preload" href'./assets/astral3.jpg' as="image">
+    <link rel="preload" href'./assets/astral9.jpg' as="image">
+    <link rel="preload" href'./assets/astral1.jpg' as="image">
+    <link rel="preload" href'./assets/astral8.jpg' as="image">
+    <link rel="preload" href'./assets/astral10.jpg' as="image">
+    <link rel="preload" href'./assets/astral7.jpg' as="image">
+    <link rel="preload" href'./assets/astral5.jpg' as="image">
+    <link rel="preload" href'./assets/astral2.jpg' as="image">
+    <link rel="preload" href'./assets/astral4.jpg' as="image">
     <div class='main'>
       <img src='./assets/Wizard-Amigos---Stickers---FOUR-FACES---TRANSPARENT---2022.png'></img>
       <h1>
@@ -105,15 +113,15 @@ function page () {
           It's the perfect place to be if you like hiking, climbing and wild swimming.
         </p> 
         <div class='gallery'>
-          <img loading="lazy" src='./assets/astral3.jpg'></img>
-          <img loading="lazy" src='./assets/astral9.jpg'></img>
-          <img loading="lazy" src='./assets/astral1.jpg'></img>
-          <img loading="lazy" src='./assets/astral8.jpg'></img>
-          <img loading="lazy" src='./assets/astral10.jpg'></img>
-          <img loading="lazy" src='./assets/astral7.jpg'></img>
-          <img loading="lazy" src='./assets/astral5.jpg'></img>
-          <img loading="lazy" src='./assets/astral2.jpg'></img>
-          <img loading="lazy" src='./assets/astral4.jpg'></img>
+          <img src='./assets/astral3.jpg'></img>
+          <img src='./assets/astral9.jpg'></img>
+          <img src='./assets/astral1.jpg'></img>
+          <img src='./assets/astral8.jpg'></img>
+          <img src='./assets/astral10.jpg'></img>
+          <img src='./assets/astral7.jpg'></img>
+          <img src='./assets/astral5.jpg'></img>
+          <img src='./assets/astral2.jpg'></img>
+          <img src='./assets/astral4.jpg'></img>
         </div>     
       </div>
       <div class='faq box'>
@@ -143,6 +151,7 @@ function page () {
     </div>
   `
 
+  shadow.querySelector('img').onload = cb
   shadow.querySelector('map_button').replaceWith(map_button)
   shadow.querySelector('booking_button').replaceWith(booking_button)
   

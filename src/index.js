@@ -1,9 +1,6 @@
-// const sheet = new CSSStyleSheet()
-// sheet.replaceSync(get_theme())
-
 module.exports = page
 
-function page () {
+function page (cb) {
   const el = document.createElement('div')
   const shadow = el.attachShadow({ mode: 'closed' })
 
@@ -16,6 +13,15 @@ function page () {
   map_button.onclick = () => open_map()
   
   shadow.innerHTML = `
+    <link rel="preload" href'./assets/astral3.jpg' as="image">
+    <link rel="preload" href'./assets/astral9.jpg' as="image">
+    <link rel="preload" href'./assets/astral1.jpg' as="image">
+    <link rel="preload" href'./assets/astral8.jpg' as="image">
+    <link rel="preload" href'./assets/astral10.jpg' as="image">
+    <link rel="preload" href'./assets/astral7.jpg' as="image">
+    <link rel="preload" href'./assets/astral5.jpg' as="image">
+    <link rel="preload" href'./assets/astral2.jpg' as="image">
+    <link rel="preload" href'./assets/astral4.jpg' as="image">
     <div class='main'>
       <img src='./assets/Wizard-Amigos---Stickers---FOUR-FACES---TRANSPARENT---2022.png'></img>
       <h1>
@@ -71,15 +77,15 @@ function page () {
           It's the perfect place to be if you like hiking, climbing and wild swimming.
         </p> 
         <div class='gallery'>
-          <img loading="lazy" src='./assets/astral3.jpg'></img>
-          <img loading="lazy" src='./assets/astral9.jpg'></img>
-          <img loading="lazy" src='./assets/astral1.jpg'></img>
-          <img loading="lazy" src='./assets/astral8.jpg'></img>
-          <img loading="lazy" src='./assets/astral10.jpg'></img>
-          <img loading="lazy" src='./assets/astral7.jpg'></img>
-          <img loading="lazy" src='./assets/astral5.jpg'></img>
-          <img loading="lazy" src='./assets/astral2.jpg'></img>
-          <img loading="lazy" src='./assets/astral4.jpg'></img>
+          <img src='./assets/astral3.jpg'></img>
+          <img src='./assets/astral9.jpg'></img>
+          <img src='./assets/astral1.jpg'></img>
+          <img src='./assets/astral8.jpg'></img>
+          <img src='./assets/astral10.jpg'></img>
+          <img src='./assets/astral7.jpg'></img>
+          <img src='./assets/astral5.jpg'></img>
+          <img src='./assets/astral2.jpg'></img>
+          <img src='./assets/astral4.jpg'></img>
         </div>     
       </div>
       <div class='faq box'>
@@ -109,6 +115,7 @@ function page () {
     </div>
   `
 
+  shadow.querySelector('img').onload = cb
   shadow.querySelector('map_button').replaceWith(map_button)
   shadow.querySelector('booking_button').replaceWith(booking_button)
   
