@@ -105,15 +105,15 @@ function page () {
           It's the perfect place to be if you like hiking, climbing and wild swimming.
         </p> 
         <div class='gallery'>
-          <img src='./assets/astral3.jpg'></img>
-          <img src='./assets/astral9.jpg'></img>
-          <img src='./assets/astral1.jpg'></img>
-          <img src='./assets/astral8.jpg'></img>
-          <img src='./assets/astral10.jpg'></img>
-          <img src='./assets/astral7.jpg'></img>
-          <img src='./assets/astral5.jpg'></img>
-          <img src='./assets/astral2.jpg'></img>
-          <img src='./assets/astral4.jpg'></img>
+          <img loading="lazy" src='./assets/astral3.jpg'></img>
+          <img loading="lazy" src='./assets/astral9.jpg'></img>
+          <img loading="lazy" src='./assets/astral1.jpg'></img>
+          <img loading="lazy" src='./assets/astral8.jpg'></img>
+          <img loading="lazy" src='./assets/astral10.jpg'></img>
+          <img loading="lazy" src='./assets/astral7.jpg'></img>
+          <img loading="lazy" src='./assets/astral5.jpg'></img>
+          <img loading="lazy" src='./assets/astral2.jpg'></img>
+          <img loading="lazy" src='./assets/astral4.jpg'></img>
         </div>     
       </div>
       <div class='faq box'>
