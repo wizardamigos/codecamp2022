@@ -22,6 +22,10 @@ function page (cb) {
     <link rel="preload" href'./assets/astral5.jpg' as="image">
     <link rel="preload" href'./assets/astral2.jpg' as="image">
     <link rel="preload" href'./assets/astral4.jpg' as="image">
+    <link rel="preload" href'./assets/astral6.jpg' as="image">
+    <link rel="preload" href'./assets/astral11.jpg' as="image">
+    <link rel="preload" href'./assets/astral12.jpg' as="image">
+    <link rel="preload" href'./assets/astral3.jpg' as="image">
     <div class='main'>
       <img src='./assets/Wizard-Amigos---Stickers---FOUR-FACES---TRANSPARENT---2022.png'></img>
       <h1>
@@ -49,8 +53,10 @@ function page (cb) {
           with hamocks/sleeping bags.
         </p>
         <p>
-          You can also find your own accomodation and contribute only for the food.
-          There are many AirBNB and hotel offerings available in the surrounding area if this arrangement does not suit you.
+          Cabins are fitted with a queen size mattress and a shelf that goes around the bed where you can keep your stuff. 
+          In the space there is a hot shower and 2 restrooms plus a fully functioning kitchen. 
+          Astralship partners with a local organic food coop, so we will have healthy and yummy food. 
+          There will also be Leslie who will be preparing us 2 warm meals per day.
         </p>
         <p>
           Single cabin: £40/day (food included)<br>
@@ -58,6 +64,10 @@ function page (cb) {
           Food only: £10/day
         </p>
         <booking_button></booking_button>
+        <p>
+        You can also find your own accomodation and contribute only for the food.
+        There are many AirBNB and hotel offerings available in the surrounding area if this arrangement does not suit you.
+      </p>
       </div>
       <div class='venue box'>
         <h2>Venue</h2>
@@ -84,8 +94,12 @@ function page (cb) {
           <img src='./assets/astral10.jpg'></img>
           <img src='./assets/astral7.jpg'></img>
           <img src='./assets/astral5.jpg'></img>
-          <img src='./assets/astral2.jpg'></img>
           <img src='./assets/astral4.jpg'></img>
+          <img src='./assets/astral6.jpg'></img>
+          <img src='./assets/astral11.jpg'></img>
+          <img src='./assets/astral13.jpg'></img>
+          <img src='./assets/astral2.jpg'></img>
+          <img src='./assets/astral12.jpg'></img>
         </div>     
       </div>
       <div class='faq box'>
@@ -240,7 +254,7 @@ function get_theme () {
       grid-column-end: 3;
       display: grid;
       grid-template-columns: repeat(8, 1fr);
-      grid-template-rows: repeat(22, 5vw);
+      grid-template-rows: repeat(31, 5vw);
       grid-gap: 15px;
     }
     .gallery img {
@@ -306,6 +320,30 @@ function get_theme () {
       grid-column-end: 4;
       grid-row-start: 18;
       grid-row-end: 23;
+    }
+    .gallery img:nth-child(10) {
+      grid-column-start: 1;
+      grid-column-end: 6;
+      grid-row-start: 23;
+      grid-row-end: 28;
+    }
+    .gallery img:nth-child(11) {
+      grid-column-start: 6;
+      grid-column-end: 9;
+      grid-row-start: 23;
+      grid-row-end: 28;
+    }
+    .gallery img:nth-child(12) {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 28;
+      grid-row-end: 33;
+    }
+    .gallery img:nth-child(13) {
+      grid-column-start: 4;
+      grid-column-end: 9;
+      grid-row-start: 28;
+      grid-row-end: 33;
     }
     @media screen and (max-width: 956px) {
       .main {
