@@ -58,6 +58,7 @@ function page (cb) {
           Astralship partners with a local organic food coop, so we will have healthy and yummy food. 
           There will also be Leslie who will be preparing us 2 warm meals per day.
         </p>
+        <h3>Accomodation and food costs (per person)</h3>
         <p>
           Single cabin: £40/day (food included)<br>
           Double cabin: £25/day (food included)<br>
