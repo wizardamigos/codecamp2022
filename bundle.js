@@ -159,7 +159,7 @@ function page (cb) {
         </p>
         <h3>Where can I get more information?</h3>
         <p>
-          You can send questions to our <a href='https://twitter.com/wizardamigos' target="_blank">WizardAmigos Twitter</a> DMs or join the <a href='https://discord.gg/8FzZPHkp44' target="_blank">Discord</a>. 
+          Check our this <a href="https://hackmd.io/@T6Wf5EsOQKe-6wyPjJPtuw/B1il-RZ3c">HackMD live document</a> for more details and up to date information. 
           </p>.
         </p>
       </div>
