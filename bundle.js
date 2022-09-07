@@ -34,12 +34,14 @@ const el = demo(async () => {
 
 
 },{"..":2}],2:[function(require,module,exports){
+const list = require('speakers')()
+
 module.exports = page
 
 function page (cb) {
   const el = document.createElement('div')
   const shadow = el.attachShadow({ mode: 'closed' })
-
+  
   const booking_button = document.createElement('button')
   booking_button.innerText = 'Tickets / Booking'
   booking_button.onclick = () => book()
@@ -47,6 +49,29 @@ function page (cb) {
   const map_button = document.createElement('button')
   map_button.innerText = 'Map'
   map_button.onclick = () => open_map()
+  
+  const speakers = document.createElement('div')
+  speakers.classList.add('box')
+  speakers.innerHTML = `<h1> Speakers </h2> </div>`
+  const container = document.createElement('div')
+  container.classList.add('speakers')
+  speakers.append(container)
+  list.forEach(item => {
+    const img = document.createElement('img')
+    img.setAttribute('src', `./assets/speakers/${item.name}`)
+    const name = document.createElement('div')
+    name.innerText = item.name
+    name.classList.add('name')
+    const project = document.createElement('div')
+    project.innerText = item.project
+    project.classList.add('project')
+
+    const speaker = document.createElement('div')
+    speaker.classList.add('speaker')
+    speaker.append(img, name, project)
+
+    container.append(speaker)
+  })
   
   shadow.innerHTML = `
     <link rel="preload" href'./assets/astral3.jpg' as="image">
@@ -62,6 +87,7 @@ function page (cb) {
     <link rel="preload" href'./assets/astral11.jpg' as="image">
     <link rel="preload" href'./assets/astral12.jpg' as="image">
     <link rel="preload" href'./assets/astral3.jpg' as="image">
+    
     <div class='main'>
       <img src='./assets/Wizard-Amigos---Stickers---FOUR-FACES---TRANSPARENT---2022.png'></img>
       <h1>
@@ -77,6 +103,9 @@ function page (cb) {
         </p>
         <p>Half a month of living, breathing and learning P2P and the future of the internet.</p>
       </div>
+      
+      <speakers></speakers>
+
       <div class='booking box'>
         <h2> Booking </h2>
         <p>
@@ -106,6 +135,7 @@ function page (cb) {
         There are many AirBNB and hotel offerings available in the surrounding area if this arrangement does not suit you.
       </p>
       </div>
+      
       <div class='venue box'>
         <h2>Venue</h2>
         <p>
@@ -167,6 +197,7 @@ function page (cb) {
   `
 
   shadow.querySelector('img').onload = cb
+  shadow.querySelector('speakers').replaceWith(speakers)
   shadow.querySelector('map_button').replaceWith(map_button)
   shadow.querySelector('booking_button').replaceWith(booking_button)
   
@@ -189,11 +220,19 @@ function page (cb) {
 
 function get_theme () {
   return `
+    :host {
+      font-family: "Courier New", Courier, monospace;
+      --pink: hsla(291, 100%, 81%, 1);
+      --light-purple: hsla(247, 89%, 70%, 1);
+      --fluo-green: hsla(121, 97%, 65%, 1);
+      --green: hsla(163, 76%, 58%, 1);
+      --red: hsla(316, 56%, 32%, 1);
+    }
     .main {
       display: grid;
       justify-items: center;
       line-height: 2rem;
-      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 4fr 1fr;
     }
     img {
       width: 450px;
@@ -206,7 +245,7 @@ function get_theme () {
       text-align: center;
       font-size: 4rem;
       font-weight: 100;
-      color: hsla(291, 100%, 81%, 1);
+      color: var(--pink);
       grid-column-start: 2;
     }
     h2 {
@@ -215,26 +254,26 @@ function get_theme () {
       line-height: 1;
       font-size: 3em;
       font-weight: 100;
-      color: hsla(121, 97%, 65%, 1);
+      color: var(--fluo-green);
       grid-column-start: 2;
     }
     h3 {
-      color: hsla(163, 76%, 58%, 1);
+      color: var(--green);
       grid-column-start: 2;
     }
     p {
-      color: hsla(163, 76%, 58%, 1);
+      color: var(--green);
       display: subgrid;
       justify-items: space-between;
       grid-column-start: 2;
     }
     a {
-      color: hsla(163, 76%, 58%, 1);
+      color: var(--green);
       transition: color .3s;
     }
     a:hover {
      text-decoration: underline; 
-     color: hsla(121, 97%, 65%, 1);
+     color: var(--fluo-green);
      transition: color .3s;
      cursor: pointer;
     }
@@ -242,16 +281,16 @@ function get_theme () {
       font-size: 1rem;
       border: none;
       padding: 1em;
-      background-color: hsla(291, 100%, 81%, 1);
+      background-color: var(--pink);
       transition: background-color .3s ease-in-out;
-      color: hsla(316, 56%, 32%, 1);
+      color: var(--red);
       grid-column-start: 2;
       margin: 3% 0 3% 0;
       width: 215px;
       height: 70px;
     }
     button:hover {
-      background-color: hsla(121, 97%, 65%, 1);
+      background-color: var(--fluo-green);
       transition: background-color .3s ease-in-out;
       cursor: pointer;
     }
@@ -261,19 +300,59 @@ function get_theme () {
       text-align: center;
       font-size: 2rem;
       font-weight: 600;
-      color: hsla(121, 97%, 65%, 1);
+      color: var(--fluo-green);
       grid-column-start: 2;
     }
     .box {
       grid-column-start: 2;
-      border: 16px solid hsla(247, 89%, 70%, 1);
+      border: 16px solid var(--light-purple);
       transition: box-shadow .3s ease-in-out;
       padding: 3%;
       margin: 5% 5% 0 5%;
-      display: grid;
-      justify-items: center;
       text-align: center;
-      font-size:1.5rem;
+      font-size: 1.5rem;
+      width: 100%;
+    }
+    .speakers {     
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .speaker {
+      max-with: 300px;
+      padding: 10px;
+      margin: 25px;
+    }
+    .speaker .name {
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--fluo-green);
+    }
+    .speaker .project {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--green);
+    }
+    .speaker img {
+      border-radius: 50%;
+      margin: 5%;
+      min-width: 0px;
+      width: 170px;
+      height: 170px;
+      box-shadow: 7px 7px var(--fluo-green);
+      -moz-box-shadow: 7px 7px var(--fluo-green);
+      -webkit-box-shadow: 7px 7px var(--fluo-green);
+      -o-box-shadow: 7px 7px var(--fluo-green);      
+      transition: all 0.5s ease-in-out 0s;
+    }
+    .speaker img:hover {
+      cursor: pointer;
+      transform: translate(5%, 10%);
+      box-shadow: var(--purple);
+      -moz-box-shadow: var(--purple);
+      -webkit-box-shadow: var(--purple);
+      -o-box-shadow: var(--purple);   
+      transition: all 0.2s ease-in-out 0s;
     }
     .booking {
     }
@@ -394,4 +473,29 @@ function get_theme () {
     }
   `
 }
+},{"speakers":3}],3:[function(require,module,exports){
+module.exports = get_speakers
+
+function get_speakers () {
+  const list = [
+    { name: 'mafintosh', project: 'Hypercore & Holepunch', },
+    { name: 'jam10o', project: 'Shokunin network', },
+    { name: 'mauve', project: 'Agregore', },
+    { name: 'noraliucode', project: 'x Token', },
+    { name: 'MBrinsleyHarris', project: 'Hacktion Lab', },
+    { name: 'kumavis', project: 'LavaMoat & MetaMask', },
+    { name: 'heapwolf', project: 'Socket Supply', },
+    { name: 'carax', project: 'Sher & Geut', },
+    { name: 'ninabreznik', project: 'DatDot & WizardAmigos', },
+    { name: 'zobroj', project: 'Design', },
+    { name: 'dboutcert', project: 'WizardAmigos', },
+    { name: 'serapath', project: 'DatDot & WizardAmigos', },
+    { name: 'cryptmppt', project: 'Tokenomics', },
+    { name: 'bcomnes', project: 'Socket Security', },
+    { name: 'naugtur', project: 'Socket Security', },
+    { name: 'telamohn', project: 'Pico Stack', },
+    
+  ]
+  return list
+} 
 },{}]},{},[1]);
