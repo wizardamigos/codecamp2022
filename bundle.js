@@ -66,7 +66,9 @@ function page (cb) {
     project.innerText = item.project
     project.classList.add('project')
 
-    const speaker = document.createElement('div')
+    const speaker = document.createElement('a')
+    speaker.setAttribute('href', `https://twitter.com/${item.name}`)
+    speaker.setAttribute('target', '_blank')
     speaker.classList.add('speaker')
     speaker.append(img, name, project)
 
@@ -315,12 +317,16 @@ function get_theme () {
     }
     .speakers {     
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
     .speaker {
-      max-with: 300px;
+      max-width: 300px;
       padding: 10px;
       margin: 25px;
+      text-decoration: none;
+    }
+    .speaker:hover {
+      text-decoration: none;
     }
     .speaker .name {
       text-align: center;
@@ -352,7 +358,7 @@ function get_theme () {
       -moz-box-shadow: var(--purple);
       -webkit-box-shadow: var(--purple);
       -o-box-shadow: var(--purple);   
-      transition: all 0.2s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
     }
     .booking {
     }
@@ -480,7 +486,7 @@ function get_speakers () {
   const list = [
     { name: 'mafintosh', project: 'Hypercore & Holepunch', },
     { name: 'jam10o', project: 'Shokunin network', },
-    { name: 'mauve', project: 'Agregore', },
+    { name: 'dboutcert', project: 'WizardAmigos', },
     { name: 'noraliucode', project: 'x Token', },
     { name: 'MBrinsleyHarris', project: 'Hacktion Lab', },
     { name: 'kumavis', project: 'LavaMoat & MetaMask', },
@@ -488,7 +494,7 @@ function get_speakers () {
     { name: 'carax', project: 'Sher & Geut', },
     { name: 'ninabreznik', project: 'DatDot & WizardAmigos', },
     { name: 'zobroj', project: 'Design', },
-    { name: 'dboutcert', project: 'WizardAmigos', },
+    { name: 'mauve', project: 'Agregore', },
     { name: 'serapath', project: 'DatDot & WizardAmigos', },
     { name: 'cryptmppt', project: 'Tokenomics', },
     { name: 'bcomnes', project: 'Socket Security', },
