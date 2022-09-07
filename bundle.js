@@ -59,6 +59,7 @@ function page (cb) {
   list.forEach(item => {
     const img = document.createElement('img')
     img.setAttribute('src', `./assets/speakers/${item.name}`)
+    img.classList.add((item.from === 'remote') ? 'remote' : 'local' )
     const name = document.createElement('div')
     name.innerText = item.name
     name.classList.add('name')
@@ -91,7 +92,7 @@ function page (cb) {
     <link rel="preload" href'./assets/astral3.jpg' as="image">
     
     <div class='main'>
-      <img src='./assets/Wizard-Amigos---Stickers---FOUR-FACES---TRANSPARENT---2022.png'></img>
+      <img class='logo' src='./assets/Wizard-Amigos---Stickers---FOUR-FACES---TRANSPARENT---2022.png'></img>
       <h1>
         <span>Wizard Amigos</span>
         <span> Code Camp</span>
@@ -171,6 +172,7 @@ function page (cb) {
           <img src='./assets/astral12.jpg'></img>
         </div>     
       </div>
+      
       <div class='faq box'>
         <h2>About</h2>
         <h3>Who is organizing this?</h3>
@@ -237,8 +239,11 @@ function get_theme () {
       grid-template-columns: 1fr 4fr 1fr;
       justify-items: center;
     }
-    img {
-      width: 450px;
+    .logo {
+      min-width: 350px;
+      max-width: 450px;
+      width: 20%;
+      height: auto;
       grid-column-start: 2;
     }
     h1 {
@@ -314,7 +319,7 @@ function get_theme () {
       margin: 5% 5% 0 5%;
       text-align: center;
       font-size: 1.5rem;
-      width: 100%;
+      width: 90%;
     }
     .speakers {     
       display: grid;
@@ -322,9 +327,7 @@ function get_theme () {
       justify-items: center;
     }
     .speaker {
-      max-width: 300px;
       padding: 10px;
-      margin: 25px;
       text-decoration: none;
     }
     .speaker:hover {
@@ -343,14 +346,11 @@ function get_theme () {
     }
     .speaker img {
       border-radius: 50%;
-      margin: 5%;
-      min-width: 0px;
-      max-width: 170px;
-      height: 170px;
-      box-shadow: 7px 7px var(--fluo-green);
-      -moz-box-shadow: 7px 7px var(--fluo-green);
-      -webkit-box-shadow: 7px 7px var(--fluo-green);
-      -o-box-shadow: 7px 7px var(--fluo-green);      
+      margin-top: 20%;
+      min-width: 150px;
+      max-width: 150px;
+      width: 50%;
+      height: auto;  
       transition: all 0.5s ease-in-out 0s;
     }
     .speaker img:hover {
@@ -362,11 +362,24 @@ function get_theme () {
       -o-box-shadow: var(--purple);   
       transition: all 0.3s ease-in-out 0s;
     }
+    .local {
+      box-shadow: 7px 7px var(--pink);
+      -moz-box-shadow: 7px 7px var(--pink);
+      -webkit-box-shadow: 7px 7px var(--pink);
+      -o-box-shadow: 7px 7px var(--pink);  
+    }
+    .remote {
+      box-shadow: 7px 7px var(--fluo-green);
+      -moz-box-shadow: 7px 7px var(--fluo-green);
+      -webkit-box-shadow: 7px 7px var(--fluo-green);
+      -o-box-shadow: 7px 7px var(--fluo-green);    
+    }
     .booking {
     }
     .venue {
     }
     .faq {
+      word-break: break-word;
     }
     .astralship {
       font-style: italic;
@@ -472,11 +485,13 @@ function get_theme () {
     @media screen and (max-width: 956px) {
       .main {
         grid-template-columns: 1fr 5fr 1fr;
+        font-size: 1vw;
       };
     }
     @media only screen and (max-width: 768px) {
       .main {
         grid-template-columns: 1fr 8fr 1fr;
+        font-size: 1vw;
       };
     }
   `
@@ -486,22 +501,22 @@ module.exports = get_speakers
 
 function get_speakers () {
   const list = [
-    { name: 'mafintosh', project: 'Hypercore & Holepunch', },
-    { name: 'jam10o', project: 'Shokunin network', },
-    { name: 'dboutcert', project: 'WizardAmigos', },
-    { name: 'noraliucode', project: 'x Token', },
-    { name: 'MBrinsleyHarris', project: 'Hacktion Lab', },
-    { name: 'kumavis', project: 'LavaMoat & MetaMask', },
-    { name: 'heapwolf', project: 'Socket Supply', },
-    { name: 'carax', project: 'Sher & Geut', },
-    { name: 'ninabreznik', project: 'DatDot & WizardAmigos', },
-    { name: 'zobroj', project: 'Design', },
-    { name: 'mauve', project: 'Agregore', },
-    { name: 'serapath', project: 'DatDot & WizardAmigos', },
-    { name: 'cryptmppt', project: 'Tokenomics', },
-    { name: 'bcomnes', project: 'Socket Security', },
-    { name: 'naugtur', project: 'Socket Security', },
-    { name: 'telamohn', project: 'Pico Stack', },
+    { name: 'mafintosh', project: 'Hypercore & Holepunch', from: 'remote' },
+    { name: 'jam10o', project: 'Shokunin network', from: 'local'},
+    { name: 'dboutcert', project: 'WizardAmigos', from: 'remote'},
+    { name: 'noraliucode', project: 'x Token', from: 'local'},
+    { name: 'MBrinsleyHarris', project: 'Hacktion Lab', from: 'local' },
+    { name: 'kumavis', project: 'LavaMoat & MetaMask', from: 'remote'},
+    { name: 'heapwolf', project: 'Socket Supply', from: 'remote'},
+    { name: 'carax', project: 'Sher & Geut', from: 'remote'},
+    { name: 'ninabreznik', project: 'DatDot & WizardAmigos', from: 'local'},
+    { name: 'zobroj', project: 'Design', from: 'local'},
+    { name: 'mauve', project: 'Agregore', from: 'remote'},
+    { name: 'serapath', project: 'DatDot & WizardAmigos', from: 'local'},
+    { name: 'cryptmppt', project: 'Tokenomics', from: 'local'},
+    { name: 'bcomnes', project: 'Socket Security', from: 'remote'},
+    { name: 'naugtur', project: 'Endo & MetaMask', from: 'remote'},
+    { name: 'telamohn', project: 'Pico Stack', from: 'remote'},
     
   ]
   return list
