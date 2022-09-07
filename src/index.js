@@ -199,6 +199,7 @@ function get_theme () {
       justify-items: center;
       line-height: 2rem;
       grid-template-columns: 1fr 4fr 1fr;
+      justify-items: center;
     }
     img {
       width: 450px;
@@ -282,6 +283,7 @@ function get_theme () {
     .speakers {     
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      justify-items: center;
     }
     .speaker {
       max-width: 300px;
@@ -307,7 +309,7 @@ function get_theme () {
       border-radius: 50%;
       margin: 5%;
       min-width: 0px;
-      width: 170px;
+      max-width: 170px;
       height: 170px;
       box-shadow: 7px 7px var(--fluo-green);
       -moz-box-shadow: 7px 7px var(--fluo-green);
