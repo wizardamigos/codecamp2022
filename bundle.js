@@ -517,6 +517,7 @@ function get_speakers () {
     { name: 'bcomnes', project: 'Socket Security', from: 'remote'},
     { name: 'naugtur', project: 'Endo & MetaMask', from: 'remote'},
     { name: 'telamohn', project: 'Pico Stack', from: 'remote'},
+    { name: 'XyloDrone', project: 'Ordum', from: 'local'},
     
   ]
   return list
