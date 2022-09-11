@@ -242,6 +242,10 @@ function get_theme () {
     a {
       color: var(--green);
       transition: color .3s;
+      min-width: 280px;
+      max-width: 350px;
+      width: 20%;
+      height: auto;
     }
     a:hover {
      text-decoration: underline; 

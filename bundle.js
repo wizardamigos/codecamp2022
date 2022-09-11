@@ -278,6 +278,10 @@ function get_theme () {
     a {
       color: var(--green);
       transition: color .3s;
+      min-width: 280px;
+      max-width: 350px;
+      width: 20%;
+      height: auto;
     }
     a:hover {
      text-decoration: underline; 
@@ -510,7 +514,7 @@ function get_speakers () {
     { name: 'heapwolf', project: 'Socket Supply', from: 'remote'},
     { name: 'carax', project: 'Sher & Geut', from: 'remote'},
     { name: 'ninabreznik', project: 'DatDot & WizardAmigos', from: 'local'},
-    { name: 'zobroj', project: 'Design', from: 'local'},
+    { name: 'zobroj', project: 'Art & Design', from: 'local'},
     { name: 'mauve', project: 'Agregore', from: 'remote'},
     { name: 'serapath', project: 'DatDot & WizardAmigos', from: 'local'},
     { name: 'cryptmppt', project: 'Tokenomics', from: 'local'},
@@ -518,6 +522,8 @@ function get_speakers () {
     { name: 'naugtur', project: 'Endo & MetaMask', from: 'remote'},
     { name: 'telamohn', project: 'Pico Stack', from: 'remote'},
     { name: 'xylodrone', project: 'Ordum', from: 'local'},
+    { name: 'k_schellinger', project: 'Q innovations', from: 'remote'},
+    { name: 'jeffemmett', project: 'Commons stack', from: 'remote'},
     
   ]
   return list
