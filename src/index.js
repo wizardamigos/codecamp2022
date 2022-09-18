@@ -32,7 +32,7 @@ function page (cb) {
     project.classList.add('project')
 
     const speaker = document.createElement('a')
-    speaker.setAttribute('href', `https://twitter.com/${item.name}`)
+    speaker.setAttribute('href', item.link)
     speaker.setAttribute('target', '_blank')
     speaker.classList.add('speaker')
     speaker.append(img, name, project)

@@ -68,7 +68,7 @@ function page (cb) {
     project.classList.add('project')
 
     const speaker = document.createElement('a')
-    speaker.setAttribute('href', `https://twitter.com/${item.name}`)
+    speaker.setAttribute('href', item.link)
     speaker.setAttribute('target', '_blank')
     speaker.classList.add('speaker')
     speaker.append(img, name, project)
@@ -505,34 +505,38 @@ module.exports = get_speakers
 
 function get_speakers () {
   const list = [
-    { name: 'mafintosh', project: 'Hypercore & Holepunch', from: 'remote' },
-    { name: 'jam10o', project: 'Shokunin network', from: 'local'},
-    { name: 'dboutcert', project: 'WizardAmigos', from: 'remote'},
-    { name: 'noraliucode', project: 'x Token', from: 'local'},
-    { name: 'MBrinsleyHarris', project: 'Hacktion Lab', from: 'local' },
-    { name: 'kumavis_', project: 'LavaMoat & MetaMask', from: 'remote'},
-    { name: 'heapwolf', project: 'Socket Supply', from: 'remote'},
-    { name: 'carax', project: 'Sher & Geut', from: 'remote'},
-    { name: 'ninabreznik', project: 'DatDot & WizardAmigos', from: 'local'},
-    { name: 'zobroj', project: 'Art & Design', from: 'local'},
-    { name: 'RangerMauve', project: 'Agregore', from: 'remote'},
-    { name: 'AstralMarlene', project: 'Astralship & TyddynTeg', from: 'local'},
-    { name: 'serapath', project: 'DatDot & WizardAmigos', from: 'local'},
-    { name: 'ACryptoMuppet', project: 'Tokenomics', from: 'local'},
-    { name: 'liamkurmos', project: 'Astralship', from: 'local'},
-    { name: 'bcomnes', project: 'Socket Security', from: 'remote'},
-    { name: 'naugtur', project: 'Endo & MetaMask', from: 'remote'},
-    { name: 'telamohn', project: 'Pico Stack', from: 'remote'},
-    { name: 'xylodrone', project: 'Ordum', from: 'local'},
-    { name: 'k_schellinger', project: 'Q innovations', from: 'remote'},
-    { name: 'jeffemmett', project: 'Commons stack', from: 'remote'},
-    { name: 'MikolaLysenko', project: '0fps & Socket Security', from: 'remote'},
-    { name: 'DimaYv', project: 'Audio processing', from: 'remote'},
-    { name: 'nicksellen', project: 'Karrot', from: 'local'},
-    { name: 'micahscopes', project: 'Wondering Xyz', from: 'remote'},
-    { name: 'whimful', project: 'Ahau & Protozoa & SSB', from: 'remote'},
-    { name: 'frandocita', project: 'Sonar & Arso', from: 'remote'},
-    { name: 'shaneo_donnell', project: 'Value Flows', from: 'remote'},
+    { name: 'mafintosh', project: 'Hypercore & Holepunch', from: 'remote', link: 'https://twitter.com/mafintosh' },
+    { name: 'jam10o', project: 'Shokunin network', from: 'local', link: 'https://twitter.com/jam10o'},
+    { name: 'dboutcert', project: 'WizardAmigos', from: 'remote', link: 'https://twitter.com/dboutcert'},
+    { name: 'noraliucode', project: 'x Token', from: 'local', link: 'https://twitter.com/noraliucode' },
+    { name: 'MBrinsleyHarris', project: 'Hacktion Lab', from: 'local' , link: 'https://twitter.com/MBrinsleyHarris'},
+    { name: 'kumavis_', project: 'LavaMoat & MetaMask', from: 'remote', link: 'https://twitter.com/kumavis_'},
+    { name: 'heapwolf', project: 'Socket Supply', from: 'remote', link: 'https://twitter.com/heapwolf'},
+    { name: 'carax', project: 'Sher & Geut', from: 'remote', link: 'https://twitter.com/carax'},
+    { name: 'ninabreznik', project: 'DatDot & WizardAmigos', from: 'local', link: 'https://twitter.com/ninabreznik'},
+    { name: 'zobroj', project: 'Art & Design', from: 'local', link: 'https://twitter.com/zobroj'},
+    { name: 'RangerMauve', project: 'Agregore', from: 'remote', link: 'https://twitter.com/RangerMauve'},
+    { name: 'Aglae Bindi', project: 'Astralship & TyddynTeg', from: 'local', link: 'https://twitter.com/AstralMarlene'},
+    { name: 'serapath', project: 'DatDot & WizardAmigos', from: 'local', link: 'https://twitter.com/serapath'},
+    { name: 'ACryptoMuppet', project: 'Tokenomics', from: 'local', link: 'https://twitter.com/ACryptoMuppet'},
+    { name: 'liamkurmos', project: 'Astralship', from: 'local', link: 'https://twitter.com/liamkurmos'},
+    { name: 'bcomnes', project: 'Socket Security', from: 'remote', link: 'https://twitter.com/bcomnes'},
+    { name: 'naugtur', project: 'Endo & MetaMask', from: 'remote', link: 'https://twitter.com/naugtur'},
+    { name: 'telamohn', project: 'Pico Stack', from: 'remote', link: 'https://twitter.com/telamohn'},
+    { name: 'hugozap', project: 'Diagram Codes', from: 'remote', link: 'https://twitter.com/hugozap'},
+    { name: 'xylodrone', project: 'Ordum', from: 'local', link: 'https://twitter.com/xylodrone'},
+    { name: 'k_schellinger', project: 'Q innovations', from: 'remote', link: 'https://twitter.com/k_schellinger'},
+    { name: 'jeffemmett', project: 'Commons stack', from: 'remote', link: 'https://twitter.com/jeffemmett'},
+    { name: 'MikolaLysenko', project: '0fps & Socket Security', from: 'remote', link: 'https://twitter.com/MikolaLysenko'},
+    { name: 'DimaYv', project: 'Audio processing', from: 'remote', link: 'https://twitter.com/DimaYv'},
+    { name: 'nicksellen', project: 'Karrot', from: 'local', link: 'https://twitter.com/nicksellen'},
+    { name: 'micahscopes', project: 'Wondering Xyz', from: 'remote', link: 'https://twitter.com/micahscopes'},
+    { name: 'julianne becker', project: 'Coconat', from: 'remote', link: 'https://www.facebook.com/juliannebecker'},
+    { name: 'whimful', project: 'Ahau & Protozoa & SSB', from: 'remote', link: 'https://twitter.com/whimful'},
+    { name: 'frandocita', project: 'Sonar & Arso', from: 'remote', link: 'https://twitter.com/frandocita'},
+    { name: 'shaneo_donnell', project: 'Value Flows', from: 'remote', link: 'https://twitter.com/shaneo_donnell'},
+    { name: 'Tiberius Brastaviceanu', project: 'Sensorica', from: 'remote', link: 'https://www.linkedin.com/in/tiberiusbrastaviceanu/?originalSubdomain=ca'},
+    { name: 'Hdegroote', project: 'HyperPubees', from: 'remote', link: 'https://gitlab.com/HDegroote'},
     
   ]
   return list
